@@ -77,6 +77,13 @@ const SHUAISHA_SURAH_MAP = {
 };
 
 /**
+ * أسماء ملفات مصحف الشيخ علاء عقل المرتل كاملاً
+ */
+const ALAA_AKL_FILENAMES = [
+  "001 - الفاتحة.mp3","002 - البقرة.mp3","003 - آل عمران.mp3","004 - النساء.mp3","005 - المائدة.mp3","006 - الأنعام.mp3","007 - الأعراف.mp3","008 - الأنفال.mp3","009 - التوبة.mp3","010 - يونس.mp3","011 - هود.mp3","012 - يوسف.mp3","013 - الرعد.mp3","014 - إبراهيم.mp3","015 - الحجر.mp3","016 - النحل.mp3","017 - الإسراء.mp3","018 - الكهف.mp3","019 - مريم.mp3","020 - طه.mp3","021 - الأنبياء.mp3","022 - الحج.mp3","023 - المؤمنون.mp3","024 - النور.mp3","025 - الفرقان.mp3","026 - الشعراء.mp3","027 - النمل.mp3","028 - القصص.mp3","029 - العنكبوت.mp3","030 - الروم.mp3","031 - لقمان.mp3","032 - السجدة.mp3","033 - الأحزاب.mp3","034 - سبأ.mp3","035 - فاطر.mp3","036 - يس.mp3","037 - الصافات.mp3","038 - ص.mp3","039 - الزمر.mp3","040 - غافر.mp3","041 - فصلت.mp3","042 - الشورى.mp3","043 - الزخرف.mp3","044 - الدخان.mp3","045 - الجاثية.mp3","046 - الأحقاف.mp3","047 - محمد.mp3","048 - الفتح.mp3","049 - الحجرات.mp3","050 - ق.mp3","051 - الذاريات.mp3","052 - الطور.mp3","053 - النجم.mp3","054 - القمر.mp3","055 - الرحمن.mp3","056 - الواقعة.mp3","057 - الحديد.mp3","058 - المجادلة.mp3","059 - الحشر.mp3","060 - الممتحنة.mp3","061 - الصف.mp3","062 - الجمعة.mp3","063 - المنافقون.mp3","064 - التغابن.mp3","065 - الطلاق.mp3","066 - التحريم.mp3","067 - الملك.mp3","068 - القلم.mp3","069 - الحاقة.mp3","070 - المعارج.mp3","071 - نوح.mp3","072 - الجن.mp3","073 - المزمل.mp3","074 - المدثر.mp3","075 - القيامة.mp3","076 - الإنسان.mp3","077 - المرسلات.mp3","078 - النبأ.mp3","079 - النازعات.mp3","080 - عبس.mp3","081 - التكوير.mp3","082 - الانفطار.mp3","083 - المطففين.mp3","084 - الانشقاق.mp3","085 - البروج.mp3","086 - الطارق.mp3","087 - الأعلى.mp3","088 - الغاشية.mp3","089 - الفجر.mp3","090 - البلد.mp3","091 - الشمس.mp3","092 - الليل.mp3","093 - الضحى.mp3","094 - الشرح.mp3","095 - التين.mp3","096 - العلق.mp3","097 - القدر.mp3","098 - البينة.mp3","099 - الززلزلة.mp3","100 - العاديات.mp3","101 - القارعة.mp3","102 - التكاثر.mp3","103 - العصر.mp3","104 - الهمزة.mp3","105 - الفيل.mp3","106 - قريش.mp3","107 - الماعون.mp3","108 - الكوثر.mp3","109 - الكافرون.mp3","110 - النصر.mp3","111 - المسد.mp3","112 - الإخلاص.mp3","113 - الفلق.mp3","114 - الناس.mp3"
+];
+
+/**
  * كائن بيانات الشيخ أبو العينين شعيشع المدمج يدوياً
  */
 const SHUAISHA_RECITER = {
@@ -98,6 +105,31 @@ const SHUAISHA_RECITER = {
   defaultAvatar: {
     color: "linear-gradient(135deg, #85581A, #D4AF37)",
     initial: "أ"
+  }
+};
+
+/**
+ * كائن بيانات الشيخ علاء عقل المدمج يدوياً
+ */
+const ALAA_AKL_RECITER = {
+  id: 8888,
+  name: "علاء عقل",
+  letter: "ع",
+  moshaf: [
+    {
+      id: 8888,
+      name: "حفص عن عاصم - المصحف المرتل كاملاً",
+      rewaya_id: 1,
+      server: "ALAA_AKL_ARCHIVE",
+      surah_total: 114,
+      moshaf_type: 1,
+      surah_list: Array.from({length: 114}, (_, i) => i + 1).join(','),
+      availableSurahs: Array.from({length: 114}, (_, i) => i + 1)
+    }
+  ],
+  defaultAvatar: {
+    color: "linear-gradient(135deg, #14B8A6, #0EA5E9)",
+    initial: "ع"
   }
 };
 
@@ -136,7 +168,7 @@ export async function getSuwar() {
 }
 
 /**
- * جلب قائمة القراء مع المصاحف المتوفرة لكل قارئ (ودمج الشيخ شعيشع تلقائياً)
+ * جلب قائمة القراء مع المصاحف المتوفرة لكل قارئ (ودمج الشيخ شعيشع والشيخ علاء عقل)
  */
 export async function getReciters() {
   let recitersList = [];
@@ -186,9 +218,14 @@ export async function getReciters() {
     }
   }
 
-  // دمج الشيخ شعيشع في قائمة القراء دائماً إذا لم يكن موجوداً
-  if (Array.isArray(recitersList) && !recitersList.some(r => r.id === 9999)) {
-    recitersList = [SHUAISHA_RECITER, ...recitersList];
+  // دمج القراء الإضافيين دائماً إذا لم يكونوا موجودين
+  if (Array.isArray(recitersList)) {
+    if (!recitersList.some(r => r.id === 9999)) {
+      recitersList = [SHUAISHA_RECITER, ...recitersList];
+    }
+    if (!recitersList.some(r => r.id === 8888)) {
+      recitersList = [ALAA_AKL_RECITER, ...recitersList];
+    }
   }
 
   return recitersList;
@@ -200,11 +237,18 @@ export async function getReciters() {
 export function buildAudioUrl(serverUrl, surahId) {
   if (!serverUrl || !surahId) return '';
   
-  // اعتراض طلبات الشيخ أبو العينين شعيشع وتوجيهها لأرشيف الإنترنت مباشرة
+  // اعتراض طلبات الشيخ أبو العينين شعيشع وتوجيهها لأرشيف الإنترنت
   if (serverUrl === 'SHUAISHA_ARCHIVE') {
     const filename = SHUAISHA_SURAH_MAP[surahId];
     if (!filename) return '';
     return `https://archive.org/download/way2sona_20160508_2209/${filename}`;
+  }
+
+  // اعتراض طلبات الشيخ علاء عقل وتوجيهها لأرشيف الإنترنت
+  if (serverUrl === 'ALAA_AKL_ARCHIVE') {
+    const filename = ALAA_AKL_FILENAMES[surahId - 1];
+    if (!filename) return '';
+    return `https://archive.org/download/a015aaaaaaaaaaaaas/${encodeURIComponent(filename)}`;
   }
 
   const cleanServer = serverUrl.endsWith('/') ? serverUrl : `${serverUrl}/`;
