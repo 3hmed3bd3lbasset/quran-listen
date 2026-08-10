@@ -10,6 +10,7 @@ import { SurahsView } from './views/SurahsView';
 import { RecitersView } from './views/RecitersView';
 import { FavoritesView } from './views/FavoritesView';
 import { GiftView } from './views/GiftView';
+import { WhyView } from './views/WhyView';
 import { ReciterDetailModal } from './views/ReciterDetailModal';
 import { AlertCircle, RefreshCw } from 'lucide-react';
 
@@ -98,6 +99,8 @@ function AppContent() {
             onNavigate={(tab) => setActiveTab(tab)}
           />
         )}
+
+        {activeTab === 'why' && <WhyView />}
 
         {activeTab === 'gift' && <GiftView />}
 

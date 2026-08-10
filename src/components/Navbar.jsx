@@ -1,5 +1,5 @@
 import React from 'react';
-import { BookOpen, Users, Bookmark, Sun, Moon, Sparkles, Gift } from 'lucide-react';
+import { BookOpen, Users, Bookmark, Sun, Moon, Sparkles, Gift, HelpCircle } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { useFavorites } from '../context/FavoritesContext';
 
@@ -49,6 +49,14 @@ export function Navbar({ activeTab, setActiveTab }) {
             <Bookmark size={18} />
             <span>المفضلة</span>
             {totalFavs > 0 && <span className="fav-badge">{totalFavs}</span>}
+          </button>
+
+          <button
+            onClick={() => setActiveTab('why')}
+            className={`nav-tab-btn ${activeTab === 'why' ? 'active' : ''}`}
+          >
+            <HelpCircle size={18} className="text-emerald-500" />
+            <span>لماذا</span>
           </button>
 
           <button
