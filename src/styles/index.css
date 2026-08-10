@@ -2188,3 +2188,78 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* Installation Box Styles */
+.why-install-box {
+  margin-top: 1.5rem;
+  background: rgba(16, 185, 129, 0.04);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  border-radius: 16px;
+  padding: 1.5rem;
+}
+
+.install-box-title {
+  display: block;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--emerald-primary);
+  margin-bottom: 0.75rem;
+}
+
+.install-box-desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.why-install-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.why-install-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  color: var(--text-primary);
+  font-size: 0.98rem;
+  line-height: 1.6;
+}
+
+.why-install-steps li code {
+  background: var(--bg-body);
+  border: 1px solid var(--border-color);
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+.step-num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--emerald-primary);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  shrink: 0;
+  margin-top: 2px;
+}
+
+.install-footer-note {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px dashed var(--border-color);
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  text-align: center;
+}

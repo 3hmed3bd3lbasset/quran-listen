@@ -1,7 +1,7 @@
 import React from 'react';
 import { 
   HelpCircle, WifiOff, ShieldCheck, Heart, Sparkles, 
-  Users, CheckCircle2, Bookmark, Flame, Zap
+  Users, CheckCircle2, Bookmark, Flame, Zap, Smartphone
 } from 'lucide-react';
 
 export function WhyView() {
@@ -94,6 +94,49 @@ export function WhyView() {
                 <strong>الوضع الليلي والفاتح:</strong> عشان ترتاح بالليل وتوفر شحن موبايلك كمان.
               </li>
             </ul>
+          </div>
+
+          {/* Section: ليه معملتوش تطبيق موبايل؟ وتثبيت المنصة */}
+          <div className="why-section-card">
+            <h3 className="why-card-title font-amiri">
+              <Smartphone size={22} className="text-amber-500" />
+              <span>ليه معملتوش تطبيق للموبايل؟ وكيفية تثبيت المنصة على شاشتك</span>
+            </h3>
+            <p className="why-egyptian-text">
+              كتير بيسأل: "ليه معملتوش تطبيق ننزله من متجر التطبيقات؟"
+              <br />
+              الحقيقة إن برمجة ورفع تطبيق على متجر Google Play أو Apple Store **بيحتاج شغل كتير جداً وموافقات معقدة من جوجل وأبل واشتراكات سنوية بالدولار**. وبما إن المنصة دي **غير ربحية بالكامل ومعمولة لوجه الله تعالى** ومجانية بدون أي إعلانات، فالحل الأذكى والأوفر لكل الناس هو استخدام تقنية الويب الحديثة.
+            </p>
+            
+            <div className="why-install-box">
+              <span className="install-box-title">📱 إزاي تثبت المنصة على شاشة موبايلك كأنها تطبيق بالظبط؟</span>
+              <p className="install-box-desc">
+                عشان متفضلش كل مرة تدور على الرابط، أو يضيع منك وتنسى المنصة، تقدر تضيف أيقونة المنصة على شاشة موبايلك الرئيسية بـ 3 خطوات بسيطة جداً من المتصفح بتاعك (زي ما موضح في الصور):
+              </p>
+              <ol className="why-install-steps">
+                <li>
+                  <span className="step-num">1</span>
+                  <div>
+                    <strong>افتح قائمة خيارات المتصفح:</strong> اضغط على زر الثلاث نقط الرأسية <code>⋮</code> الموجود في أعلى أو أسفل المتصفح.
+                  </div>
+                </li>
+                <li>
+                  <span className="step-num">2</span>
+                  <div>
+                    <strong>اختار التثبيت:</strong> اضغط على خيار <strong>"التثبيت وإنشاء اختصار"</strong> (أو <strong>"إضافة إلى الشاشة الرئيسية / Add to Home screen"</strong>).
+                  </div>
+                </li>
+                <li>
+                  <span className="step-num">3</span>
+                  <div>
+                    <strong>أكد الإضافة:</strong> هتظهرلك نافذة تأكيد باسم "إنشاء اختصار"، اضغط على زر <strong>"إضافة"</strong> أو <strong>"تثبيت"</strong>.
+                  </div>
+                </li>
+              </ol>
+              <div className="install-footer-note">
+                🎉 <strong>مبروك!</strong> هتلاقي أيقونة مصحف القرآن الكريم ظهرت على شاشتك الرئيسية بجانب تطبيقاتك التانية، وتفتحها بضغطة واحدة في أي وقت.
+              </div>
+            </div>
           </div>
 
           {/* Section 5: الأسباب الحقيقية وراء المشروع */}
