@@ -4,6 +4,7 @@ import {
   RotateCcw, CheckCircle2, BookOpen, Sun, Moon, Search, Loader2, Award, ArrowLeft
 } from 'lucide-react';
 import { getAzkarCategories, getAzkarItems, DEFAULT_TASBEEH } from '../services/azkarApi';
+import devAvatar from '../assets/dev-avatar.jpg';
 
 export function GiftView() {
   // Developer Details
@@ -106,7 +107,7 @@ export function GiftView() {
             <div className="dev-profile-inner">
               <div className="dev-info-left">
                 <div className="dev-avatar">
-                  <span>أ</span>
+                  <img src={devAvatar} alt={devName} className="dev-avatar-img" />
                 </div>
                 <div className="dev-details">
                   <span className="dev-role-tag">
