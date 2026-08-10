@@ -9,7 +9,7 @@ export function GiftView() {
   // Developer Details
   const devName = "Ahmed Abdelbaset Mohamed";
   const devPhone = "01285694670";
-  const whatsappUrl = `https://wa.me/201285694670?text=${encodeURIComponent("السلام عليكم ورحمة الله وبركاته - أهلاً بك أخي أحمد عبد الباسط، أتواصل معك عبر منصة القرآن الكريم")}`;
+  const whatsappUrl = "https://wa.me/201285694670";
 
   // Azkar State
   const [activeAzkarTab, setActiveAzkarTab] = useState('tasbeeh'); // 'tasbeeh' | 'morning_evening' | 'supplications' | 'all_categories'
